@@ -1,5 +1,5 @@
 [build]
-  publish = "dist" # or the appropriate folder where your HTML files are located
-  command = "npm install && npm run build"
+  publish = "." # The folder where your index.html is located
+  command = "" # No build command needed for a simple project
 [functions]
   directory = "functions"

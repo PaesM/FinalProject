@@ -1,0 +1,14 @@
+{
+    "name": "FinalProject",
+    "version": "1.0.0",
+    "description": "For final project PT",
+    "main": "index.html",
+    "scripts": {
+      "start": "python -m http.server",
+      "build": "echo 'No build script specified'"
+    },
+    "dependencies": {
+      "node-fetch": "^2.6.1"
+    }
+  }
+  

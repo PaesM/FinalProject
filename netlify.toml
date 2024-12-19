@@ -1,2 +1,5 @@
 [build]
-  functions = "functions"
+  publish = "dist" # or the appropriate folder where your HTML files are located
+  command = "npm install && npm run build"
+[functions]
+  directory = "functions"

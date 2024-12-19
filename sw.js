@@ -1,21 +1,32 @@
-const CACHE_NAME = 'cat-fact-cache-v1';
-const urlsToCache = [
-    '/',
-    '/index.html', 
-    '/script.js',  
-    '/manifest.json',
-    '/icon-192x192.png',
-    '/icon-512x512.png'
-];
-
-self.addEventListener('install', (event) => {
+self.addEventListener('install', event => {
+   
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(urlsToCache);
+        caches.open('v1').then(cache => {
+            return cache.addAll([
+                '/',                 
+                '/index.html',       
+                '/styles.css',       
+                '/script.js',        
+                '/icon-192x192.png', 
+                '/icon-512x512.png'  
+            ]);
         })
     );
 });
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
     event.respondWith(
-        caches.match(event.request).then((response) =>
+        caches.match(event.request).then(response => {
+            if (response) {
+                return response;
+            }
+            return fetch(event.request);
+        }).catch(error => {
+            console.error('Service Worker fetch error:', error);
+            return new Response('Failed to fetch.', {
+                status: 500,
+                statusText: 'Service Worker fetch error'
+            });
+        })
+    );
+});

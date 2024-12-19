@@ -6,30 +6,32 @@
     "background_color": "#ffffff",
     "theme_color": "#4CAF50",
     "icons": [
-        {
-            "src": "icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
+      {
+        "src": "icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
     ],
+    "service_worker": "sw.js",
     "screenshots": [
-        {
-            "src": "screenshot-mobile.png",
-            "sizes": "359x639",
-            "type": "image/png",
-            "label": "Mobile view"
-        },
-        {
-            "src": "screenshot-desktop.png",
-            "sizes": "764x431",
-            "type": "image/png",
-            "form_factor": "wide",
-            "label": "Desktop view"
-        }
+      {
+        "src": "screenshot-mobile.png",
+        "sizes": "360x640",
+        "type": "image/png",
+        "label": "Mobile view"
+      },
+      {
+        "src": "screenshot-desktop.png",
+        "sizes": "1280x720",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Desktop view"
+      }
     ]
-}
+  }
+  

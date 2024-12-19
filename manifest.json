@@ -26,7 +26,7 @@
         },
         {
             "src": "screenshot-desktop.png",
-            "sizes": "764x341",
+            "sizes": "764x431",
             "type": "image/png",
             "form_factor": "wide",
             "label": "Desktop view"

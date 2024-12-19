@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Cat Facts</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4CAF50">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,6 +28,27 @@
     <button id="getFact">Get a Cat Fact</button>
     <div id="fact"></div>
 
-    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('/sw.js')
+                .then(() => console.log('Service Worker registered!'))
+                .catch((error) => console.error('Service Worker registration failed:', error));
+        }
+
+        document.getElementById('getFact').addEventListener('click', function () {
+            const url = '/.netlify/functions/catFact';
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('fact').textContent = data.fact;
+                })
+                .catch(error => {
+                    document.getElementById('fact').textContent = 'Failed to fetch a cat fact.';
+                    console.error('Error:', error);
+                });
+        });
+    </script>
 </body>
 </html>

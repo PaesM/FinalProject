@@ -1,5 +1,6 @@
 [build]
-  publish = "." # The folder where your index.html is located
-  command = "" # No build command needed for a simple project
+  publish = "." # The folder containing index.html
+  command = "" # No build command for this setup
+
 [functions]
   directory = "functions"
